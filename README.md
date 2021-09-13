@@ -1,1 +1,2 @@
-EMT Lab2 175035
+Project: Dockerization web applications and Ansible Deployment
+Course: Administration of IT systems
