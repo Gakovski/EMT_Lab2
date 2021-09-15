@@ -1,18 +1,38 @@
-version: '3.1'
+version: '3'
+
 services:
-  app:
-    container_name: springboot-postgresql
-    image: springboot-postgresql
-    build: ./
+
+  db:
+    image: "postgres:9.6-alpine"
+    container_name: db
+    restart: always
+
     ports:
-      - "9090:9090"
-    depends_on:
-      - postgresqldb
-  postgresqldb:
-    image: postgres
-    ports:
-      - "5433:5433"
+      - 5433:5433
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
     environment:
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=postgres
       - POSTGRES_DB=studentDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+
+  flamup:
+    build: ./
+    container_name: flamup
+    environment:
+      - DB_SERVER:db
+      - POSTGRES_DB=studentDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 8081:8081 # Forward the exposed port 8080 on the container to port 8080 on the host machine
+
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
