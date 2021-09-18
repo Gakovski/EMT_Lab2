@@ -1,7 +1,7 @@
 package com.emt.lab2.backend.Book;
 
 import com.emt.lab2.backend.Author.Author;
-import com.emt.lab2.backend.Categories.Categories;
+import com.emt.lab2.backend.Categories.Category;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,13 +22,13 @@ public class Book {
     )
     private Long id;
     private String name;
-    private Categories category;
+    private Category category;
     @ManyToOne
     private Author author;
     private Integer availableCopies;
 
     public Book(){}
-    public Book(String name, Categories category, Author author, Integer availableCopies) {
+    public Book(String name, Category category, Author author, Integer availableCopies) {
         this.name = name;
         this.category = category;
         this.author = author;
