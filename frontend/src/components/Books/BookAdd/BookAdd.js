@@ -7,7 +7,7 @@ const BookAdd = (props) => {
     const [book, updateBook] = React.useState({
         name: "",
         category: 0,
-        authorid: 15,
+        authorid: 1,
         availableCopies: 0
     })
 

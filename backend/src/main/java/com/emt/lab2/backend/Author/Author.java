@@ -9,16 +9,17 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Author {
+
     @Id
-    @SequenceGenerator(
-            name= "author_sequence",
-            sequenceName = "author_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "author_sequence"
-    )
+//    @SequenceGenerator(
+//            name= "author_sequence",
+//            sequenceName = "author_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.IDENTITY,
+//            generator = "author_sequence"
+//    )
     private Long id;
     private String name;
     private String surname;
