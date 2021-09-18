@@ -24,6 +24,7 @@ public class Author {
     private String surname;
     @ManyToOne
     private Country country;
+//    private Long countryId;
 
     public Author(){}
 
@@ -32,4 +33,14 @@ public class Author {
         this.surname = surname;
         this.country = country;
     }
+
+    public static Author build (Long authorId, String name, String surname, Country country){
+        Author a = new Author();
+        a.id = authorId;
+        a.name = name;
+        a.surname = surname;
+        a.country = country;
+        return  a;
+    }
+
 }

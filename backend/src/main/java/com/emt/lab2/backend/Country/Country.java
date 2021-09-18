@@ -29,6 +29,14 @@ public class Country {
         this.continent = continent;
     }
 
+    public static Country build(String name, String continent){
+        Country c = new Country();
+        c.name = name;
+        c.continent = continent;
+        return c;
+    }
+
+
     public String getName() {
         return name;
     }
