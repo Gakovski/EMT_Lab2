@@ -55,7 +55,7 @@ const BookAdd = (props) => {
                         <label>Authors</label>
                         <select name="authors" className="form-control" onChange={handleChange}>
                             {props.authors.map((term) =>
-                                <option value="{term.id}">{term.name + " " + term.surname}</option>
+                                <option value={term.id}>{term.name + " " + term.surname}</option>
                             )}
                         </select>
                     </div>
