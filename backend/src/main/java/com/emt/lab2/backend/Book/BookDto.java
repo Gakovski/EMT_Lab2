@@ -1,6 +1,6 @@
 package com.emt.lab2.backend.Book;
 
-import com.emt.lab2.backend.Categories.Category;
+import com.emt.lab2.backend.Category.Category;
 import lombok.Data;
 
 @Data
